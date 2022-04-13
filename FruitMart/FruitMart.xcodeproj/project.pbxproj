@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7447132A2806B9CF00E956A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744713292806B9CF00E956A5 /* Assets.xcassets */; };
 		7447132E2806BC3100E956A5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447132D2806BC3100E956A5 /* ColorExtension.swift */; };
+		744713312806C02E00E956A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744713302806C02E00E956A5 /* Product.swift */; };
 		74B46EB92806AE7500FFF5A6 /* FruitMartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B46EB82806AE7500FFF5A6 /* FruitMartApp.swift */; };
 		74B46EBB2806AE7500FFF5A6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B46EBA2806AE7500FFF5A6 /* Home.swift */; };
 		74B46EC02806AE7600FFF5A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B46EBF2806AE7600FFF5A6 /* Preview Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		744713292806B9CF00E956A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../HelloSwiftUI/HelloSwiftUI/Assets.xcassets; sourceTree = "<group>"; };
 		7447132D2806BC3100E956A5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		744713302806C02E00E956A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		74B46EB52806AE7500FFF5A6 /* FruitMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B46EB82806AE7500FFF5A6 /* FruitMartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMartApp.swift; sourceTree = "<group>"; };
 		74B46EBA2806AE7500FFF5A6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 				7447132D2806BC3100E956A5 /* ColorExtension.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		7447132F2806C01800E956A5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				744713302806C02E00E956A5 /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		74B46EAC2806AE7500FFF5A6 = {
@@ -82,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				74B46ECB2806AEA000FFF5A6 /* User Interface */,
+				7447132F2806C01800E956A5 /* Model */,
 				74B46ECA2806AE9A00FFF5A6 /* Application */,
 			);
 			path = Source;
@@ -193,6 +204,7 @@
 			files = (
 				74B46EBB2806AE7500FFF5A6 /* Home.swift in Sources */,
 				74B46EB92806AE7500FFF5A6 /* FruitMartApp.swift in Sources */,
+				744713312806C02E00E956A5 /* Product.swift in Sources */,
 				74B46ED02806AEF700FFF5A6 /* ProductRow.swift in Sources */,
 				7447132E2806BC3100E956A5 /* ColorExtension.swift in Sources */,
 			);
