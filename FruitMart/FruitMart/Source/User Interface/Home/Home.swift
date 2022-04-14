@@ -11,10 +11,16 @@ struct Home: View {
     let store: Store
     
     var body: some View {
-        List(store.products) { product in
-            ProductRow(product: product)
+        
+        NavigationView{
+            List(store.products) { product in
+                NavigationLink(destination: ProductDetailView(product: product)){
+                    ProductRow(product: product)
+                }
+            }.navigationTitle("과일마트")
+            
         }
-    
+      
     }
 }
 

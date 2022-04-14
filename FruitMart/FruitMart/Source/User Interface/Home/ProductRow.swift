@@ -65,7 +65,7 @@ private extension ProductRow {
     // 가격 프로퍼티
     var footerView: some View {
         HStack(spacing: 0){
-            Text("$").font(.footnote)
+            Text("￦").font(.footnote)
             + Text("\(product.price)").font(.footnote)
             
             Spacer()
