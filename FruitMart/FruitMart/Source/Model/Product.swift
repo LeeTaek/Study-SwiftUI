@@ -18,7 +18,7 @@ struct Product: Decodable {
     var isFavorite: Bool = false
 }
 
-extension Product: Identifiable {}
+extension Product: Identifiable, Equatable {}
 
 let productSamples = [
     Product(name: "나는 무화과", imageName: "fig", price: 3100, description: "소화가 잘되고 변비에 좋은 달달한 무화과! 고기와 찰떡궁합 ~"),

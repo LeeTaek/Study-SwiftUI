@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ProductDetailView: View {
+    
     let product: Product
     @State private var quantity: Int = 1
-    
+    @State private var showingAlert: Bool = false
+    @EnvironmentObject private var store: Store
     
     
     var body: some View {
@@ -18,6 +20,9 @@ struct ProductDetailView: View {
             productImage
             orderView
         }.edgesIgnoringSafeArea(.top)
+            .alert(isPresented: $showingAlert) {
+                confirmAlert
+            }
     }
     
     
@@ -30,9 +35,6 @@ struct ProductDetailView: View {
             Image(self.product.imageName)
                 .resizable()
                 .scaledToFill()
-
-            
-            
         }
     }
     
@@ -54,6 +56,7 @@ struct ProductDetailView: View {
         }
     }
     
+    
     var productDescription: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack{
@@ -62,10 +65,7 @@ struct ProductDetailView: View {
                 
                 Spacer()
                 
-                Image(systemName: "heart")
-                    .imageScale(.large)
-                    .foregroundColor(Color.peach)
-                    .frame(width: 32, height: 32)
+               FavoriteButton(product: product)
             }
             Text(splitText(product.description))
                 .foregroundColor(.secondaryText)
@@ -74,6 +74,7 @@ struct ProductDetailView: View {
         }
     }
     
+    // 가격
     var priceInfo: some View {
         let price = quantity * product.price
         
@@ -88,8 +89,9 @@ struct ProductDetailView: View {
         } .foregroundColor(.black)
     }
 
+    // 주문 버튼
     var placeOrderButton: some View {
-        Button(action: {}) {
+        Button(action: { self.showingAlert = true }) {
             Capsule()
                 .fill(Color.peach)
                 .frame(maxWidth: .infinity, minHeight: 30, maxHeight: 55)
@@ -100,7 +102,7 @@ struct ProductDetailView: View {
         }
     }
     
-    
+    // 화면에 출력할 설명창 글 분할
     func splitText(_ text: String) -> String {
         guard !text.isEmpty else { return text }
         
@@ -117,9 +119,24 @@ struct ProductDetailView: View {
     }
     
         
-
-        
+    // 알림창에 표시할 내용
+    var confirmAlert: Alert {
+        Alert(title: Text("주문 확인"),
+              message: Text("\(product.name)을(를) \(quantity)개 구매하시겠습니까?"),
+              primaryButton: .default(Text("확인"), action: {
+            self.placeOrder()
+            print(store.orders)
+        }),
+              secondaryButton: .cancel(Text("취소")))
+    }
+    
+    // 상품 수량과 정보를 placeOrder에 전달
+    func placeOrder() {
+        store.placeOrder(product: product, quantity: quantity)
+    }
 }
+        
+
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {

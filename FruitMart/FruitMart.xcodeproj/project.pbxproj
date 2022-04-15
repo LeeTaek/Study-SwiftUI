@@ -15,6 +15,8 @@
 		7447132A2806B9CF00E956A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744713292806B9CF00E956A5 /* Assets.xcassets */; };
 		7447132E2806BC3100E956A5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447132D2806BC3100E956A5 /* ColorExtension.swift */; };
 		744713312806C02E00E956A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744713302806C02E00E956A5 /* Product.swift */; };
+		74AC76FD2809316C0027FA19 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC76FC2809316C0027FA19 /* FavoriteButton.swift */; };
+		74AC76FF280935DE0027FA19 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC76FE280935DE0027FA19 /* Order.swift */; };
 		74B46EB92806AE7500FFF5A6 /* FruitMartApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B46EB82806AE7500FFF5A6 /* FruitMartApp.swift */; };
 		74B46EBB2806AE7500FFF5A6 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B46EBA2806AE7500FFF5A6 /* Home.swift */; };
 		74B46EC02806AE7600FFF5A6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74B46EBF2806AE7600FFF5A6 /* Preview Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		744713292806B9CF00E956A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../HelloSwiftUI/HelloSwiftUI/Assets.xcassets; sourceTree = "<group>"; };
 		7447132D2806BC3100E956A5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		744713302806C02E00E956A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		74AC76FC2809316C0027FA19 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
+		74AC76FE280935DE0027FA19 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		74B46EB52806AE7500FFF5A6 /* FruitMart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FruitMart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74B46EB82806AE7500FFF5A6 /* FruitMartApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitMartApp.swift; sourceTree = "<group>"; };
 		74B46EBA2806AE7500FFF5A6 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -70,6 +74,7 @@
 			children = (
 				744713302806C02E00E956A5 /* Product.swift */,
 				741AB6B02807FA3D00C86784 /* Store.swift */,
+				74AC76FE280935DE0027FA19 /* Order.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,6 +147,7 @@
 				741AB6B42807FE5600C86784 /* ProductDetailView.swift */,
 				74B46ECF2806AEF700FFF5A6 /* ProductRow.swift */,
 				741AB6B928081A2D00C86784 /* QuantitySelector.swift */,
+				74AC76FC2809316C0027FA19 /* FavoriteButton.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -229,6 +235,8 @@
 				741AB6B12807FA3D00C86784 /* Store.swift in Sources */,
 				741AB6BA28081A2D00C86784 /* QuantitySelector.swift in Sources */,
 				741AB6B52807FE5600C86784 /* ProductDetailView.swift in Sources */,
+				74AC76FD2809316C0027FA19 /* FavoriteButton.swift in Sources */,
+				74AC76FF280935DE0027FA19 /* Order.swift in Sources */,
 				74B46EBB2806AE7500FFF5A6 /* Home.swift in Sources */,
 				74B46EB92806AE7500FFF5A6 /* FruitMartApp.swift in Sources */,
 				744713312806C02E00E956A5 /* Product.swift in Sources */,
@@ -291,7 +299,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -345,7 +353,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
