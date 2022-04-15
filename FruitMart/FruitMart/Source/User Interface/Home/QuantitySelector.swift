@@ -10,8 +10,11 @@ import SwiftUI
 struct QuantitySelector: View {
     
     @Binding var quantity: Int
-    
     var range: ClosedRange<Int> = 1...20    //수량 선택 가능 범위
+    
+    // 햅틱 비드백
+    private let softFeedback = UIImpactFeedbackGenerator(style: .soft)
+    private let rigidFeedback = UIImpactFeedbackGenerator(style: .rigid)
     
     var body: some View {
         HStack {
@@ -39,6 +42,12 @@ struct QuantitySelector: View {
     private func changeQuantity(_ num: Int) {
         if range ~= quantity + num {
             quantity += num
+            softFeedback.prepare()      // 진동 지연 시간을 줄일 수 있도록 미리 준비시키는 메서드
+            softFeedback.impactOccurred(intensity: 0.8)
+        } else {
+            // 정해진 수량(1~20)을 벗어날 때에 강한 진동을 발생
+            rigidFeedback.prepare()
+            rigidFeedback.impactOccurred()
         }
     }
     
