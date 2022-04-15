@@ -12,6 +12,8 @@ struct ProductDetailView: View {
     let product: Product
     @State private var quantity: Int = 1
     @State private var showingAlert: Bool = false
+    @State private var showingPopup: Bool = false
+
     @EnvironmentObject private var store: Store
     
     
@@ -19,8 +21,12 @@ struct ProductDetailView: View {
         VStack(spacing: 0) {
             productImage
             orderView
-        }.edgesIgnoringSafeArea(.top)
-            .alert(isPresented: $showingAlert) {
+        }
+        .popup(isPresented: $showingAlert) {
+            Text("팝업")
+        }
+        .edgesIgnoringSafeArea(.top)
+        .alert(isPresented: $showingPopup) {
                 confirmAlert
             }
     }
@@ -97,7 +103,7 @@ struct ProductDetailView: View {
                     .font(.system(size: 20)).fontWeight(.medium)
                     .foregroundColor(Color.white))
                 .padding(.vertical, 20)
-        }
+        }.buttonStyle(ShrinkButtonStyle())
     }
     
     // 화면에 출력할 설명창 글 분할
@@ -131,6 +137,7 @@ struct ProductDetailView: View {
     // 상품 수량과 정보를 placeOrder에 전달
     func placeOrder() {
         store.placeOrder(product: product, quantity: quantity)
+        showingPopup = true
     }
 }
         

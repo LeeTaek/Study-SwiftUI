@@ -13,6 +13,7 @@ struct FruitMartApp: App {
         WindowGroup {
             Home()
                 .environmentObject(Store())
+//                .previewInterfaceOrientation(.portrait)
         }
     }
 }
