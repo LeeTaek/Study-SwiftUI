@@ -21,7 +21,8 @@ struct Home: View {
                 }
                 darkerDivider
                 productList
-            }
+            }.buttonStyle(PlainButtonStyle())   //네비게이션보다 좋아요 버튼에 우선권을 줌.
+                .navigationTitle("과일마트")
         }
       
     }
@@ -40,13 +41,22 @@ struct Home: View {
     }
     
     var productList: some View {        // body에 작성되어 있던 기존 코드 추출
-        List(store.products) { product in
-            NavigationLink(destination: ProductDetailView(product: product)){
-                ProductRow(quickOrder: self.$quickOrder, product: product)
-            }
-        }.buttonStyle(PlainButtonStyle())   //네비게이션보다 좋아요 버튼에 우선권을 줌.
-        .navigationTitle("과일마트")
         
+        List() {
+            ForEach(store.products) { product in
+                HStack {
+                    ProductRow(product: product, quickOrder: self.$quickOrder)
+
+                    NavigationLink(destination: ProductDetailView(product: product)){
+                        EmptyView()
+                    }.frame(width:0)
+                    
+                }
+                .listRowBackground(Color.background)
+                
+            }
+          
+        }
     }
     
     var showFavorite: Bool {

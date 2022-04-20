@@ -9,10 +9,11 @@ import SwiftUI
 
 
 struct ProductRow: View {
+    let product: Product
+
     @EnvironmentObject var store: Store
     @Binding var quickOrder: Product?
     
-    let product: Product
     
     var body: some View {
         HStack{
@@ -96,7 +97,7 @@ private extension ProductRow {
 struct ProductRow_Previews: PreviewProvider {
     static var previews: some View {
 //        ProductRow(quickOrder: .constant(nil), product: $0)
-        ProductRow(quickOrder: .constant(nil), product: productSamples[0])
+        ProductRow(product: productSamples[0], quickOrder: .constant(nil))
 
     }
 }
