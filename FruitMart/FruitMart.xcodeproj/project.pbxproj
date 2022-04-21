@@ -17,6 +17,9 @@
 		744713312806C02E00E956A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744713302806C02E00E956A5 /* Product.swift */; };
 		74936CD62811203E00EE10AB /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74936CD52811203E00EE10AB /* Recipe.swift */; };
 		74936CD9281120D900EE10AB /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74936CD8281120D900EE10AB /* RecipeView.swift */; };
+		74936CDB281125A700EE10AB /* Stripes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74936CDA281125A700EE10AB /* Stripes.swift */; };
+		74936CDD2811278D00EE10AB /* ShapeClipModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74936CDC2811278D00EE10AB /* ShapeClipModifier.swift */; };
+		74936CDF2811291200EE10AB /* AnyTransitionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74936CDE2811291200EE10AB /* AnyTransitionExtension.swift */; };
 		74AC76FD2809316C0027FA19 /* FavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC76FC2809316C0027FA19 /* FavoriteButton.swift */; };
 		74AC76FF280935DE0027FA19 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC76FE280935DE0027FA19 /* Order.swift */; };
 		74AC770228094C1A0027FA19 /* Symbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74AC770128094C1A0027FA19 /* Symbol.swift */; };
@@ -43,6 +46,9 @@
 		744713302806C02E00E956A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		74936CD52811203E00EE10AB /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		74936CD8281120D900EE10AB /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		74936CDA281125A700EE10AB /* Stripes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stripes.swift; sourceTree = "<group>"; };
+		74936CDC2811278D00EE10AB /* ShapeClipModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeClipModifier.swift; sourceTree = "<group>"; };
+		74936CDE2811291200EE10AB /* AnyTransitionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTransitionExtension.swift; sourceTree = "<group>"; };
 		74AC76FC2809316C0027FA19 /* FavoriteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButton.swift; sourceTree = "<group>"; };
 		74AC76FE280935DE0027FA19 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		74AC770128094C1A0027FA19 /* Symbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symbol.swift; sourceTree = "<group>"; };
@@ -75,6 +81,7 @@
 			children = (
 				7447132D2806BC3100E956A5 /* ColorExtension.swift */,
 				741AB6AD2807F90A00C86784 /* BundleExtension.swift */,
+				74936CDE2811291200EE10AB /* AnyTransitionExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -114,6 +121,7 @@
 			children = (
 				74AC770128094C1A0027FA19 /* Symbol.swift */,
 				74AC770328094D340027FA19 /* ResizedImage.swift */,
+				74936CDA281125A700EE10AB /* Stripes.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -130,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				74AC770928094F980027FA19 /* Popup.swift */,
+				74936CDC2811278D00EE10AB /* ShapeClipModifier.swift */,
 			);
 			path = ViewModifier;
 			sourceTree = "<group>";
@@ -189,10 +198,10 @@
 		74B46ECB2806AEA000FFF5A6 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				74936CD7281120C900EE10AB /* Recipe */,
 				7447132C2806BC1E00E956A5 /* Helper */,
 				74B46ECC2806AEA700FFF5A6 /* Home */,
 				74D7008D280FCAB200243CF2 /* MainTablView.swift */,
+				74936CD7281120C900EE10AB /* Recipe */,
 			);
 			path = "User Interface";
 			sourceTree = "<group>";
@@ -292,15 +301,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				741AB6B12807FA3D00C86784 /* Store.swift in Sources */,
+				74936CDB281125A700EE10AB /* Stripes.swift in Sources */,
 				741AB6BA28081A2D00C86784 /* QuantitySelector.swift in Sources */,
 				74D7008E280FCAB200243CF2 /* MainTablView.swift in Sources */,
 				74AC770728094E9D0027FA19 /* ShrinkButtonStyle.swift in Sources */,
 				74D7008C280FC19E00243CF2 /* FavoriteProductScrollView.swift in Sources */,
+				74936CDD2811278D00EE10AB /* ShapeClipModifier.swift in Sources */,
 				741AB6B52807FE5600C86784 /* ProductDetailView.swift in Sources */,
 				74AC76FD2809316C0027FA19 /* FavoriteButton.swift in Sources */,
 				74AC770428094D340027FA19 /* ResizedImage.swift in Sources */,
 				74AC76FF280935DE0027FA19 /* Order.swift in Sources */,
 				74AC770228094C1A0027FA19 /* Symbol.swift in Sources */,
+				74936CDF2811291200EE10AB /* AnyTransitionExtension.swift in Sources */,
 				74B46EBB2806AE7500FFF5A6 /* Home.swift in Sources */,
 				74B46EB92806AE7500FFF5A6 /* FruitMartApp.swift in Sources */,
 				744713312806C02E00E956A5 /* Product.swift in Sources */,

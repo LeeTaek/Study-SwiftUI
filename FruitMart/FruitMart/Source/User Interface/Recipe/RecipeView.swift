@@ -61,6 +61,8 @@ struct RecipeView: View {
             
             ResizedImage(recipes[currentIndex].imageName, contentMode: .fit)
                 .padding(.horizontal)
+                .transition(.stripes())
+                .id(currentIndex)       // 아이디가 달라지면 초기화 된 뷰를 추가
             
             Spacer()
             
