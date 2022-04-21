@@ -15,12 +15,16 @@ struct FavoriteButton: View {
         product.isFavorite ? "heart.fill" : "heart"
     }
     
+    
     var body: some View {
         Button(action: { self.store.toggleFavorite(of: self.product)}) {
             Symbol(imageName, scale: .large, color: .peach)
                 .frame(width: 32, height:  32)
                 .onTapGesture {
-                    self.store.toggleFavorite(of: self.product)
+                    withAnimation {
+                        self.store.toggleFavorite(of: self.product)
+
+                    }
                 }
         }
         

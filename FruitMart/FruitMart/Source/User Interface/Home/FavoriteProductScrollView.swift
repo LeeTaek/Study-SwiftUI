@@ -20,6 +20,7 @@ struct FavoriteProductScrollView: View {
             }
             
         } .padding()
+            .transition(.slide)
     }
     
     var title: some View {
@@ -34,7 +35,9 @@ struct FavoriteProductScrollView: View {
             Spacer()
         }.padding(.bottom, 4)
             .onTapGesture {
-                self.showingImage.toggle()      // 이미지 표시 여부 변경
+                withAnimation {
+                    self.showingImage.toggle()      // 이미지 표시 여부 변경
+                }
             }
     }
     
@@ -51,7 +54,7 @@ struct FavoriteProductScrollView: View {
                     }
                 }
             }
-        }
+        }.animation(.spring(dampingFraction: 0.78))
     }
     
     
@@ -64,6 +67,7 @@ struct FavoriteProductScrollView: View {
                 .padding(.top, 1)
         }.frame(width: 105, height: 105)
     }
+    
     
     func scaledValue(from geometry: GeometryProxy) -> CGFloat {
         let xOffset = geometry.frame(in: .global).minX - 16 // 글로벌 좌표 기준으로 상품의 x값을 구하고, 그 값에 적용된 여백 값만큼 빼주면 한 contentOffset 얻을 수 있음.

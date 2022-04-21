@@ -13,13 +13,15 @@ struct ProductDetailView: View {
     @State private var quantity: Int = 1
     @State private var showingAlert: Bool = false
     @State private var showingPopup: Bool = false
+    @State private var willApear: Bool = false
 
     @EnvironmentObject private var store: Store
     
-    
     var body: some View {
         VStack(spacing: 0) {
-            productImage
+            if willApear {
+                productImage
+            }
             orderView
         }
         .popup(isPresented: $showingAlert) {
@@ -29,6 +31,7 @@ struct ProductDetailView: View {
         .alert(isPresented: $showingPopup) {
                 confirmAlert
             }
+        .onAppear{ self.willApear = true }
     }
     
     
@@ -37,9 +40,11 @@ struct ProductDetailView: View {
     
     // 이미지 뷰
     var productImage: some View {
-        GeometryReader { _ in
+        let effect = AnyTransition.scale.combined(with: .opacity).animation(Animation.easeInOut(duration: 0.4).delay(0.05))
+        
+        return GeometryReader { _ in
             ResizedImage(self.product.imageName)
-        }
+        }.transition(effect)
     }
     
     

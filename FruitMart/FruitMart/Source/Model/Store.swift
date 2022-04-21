@@ -25,7 +25,7 @@ final class Store: ObservableObject {
 //  즐겨찾기 정보 변경
 extension Store {
     func toggleFavorite(of product: Product) {
-        guard let index = products.firstIndex(of: product) else { return }
+        guard let index = products.firstIndex(of: product) else { print("guard!: \(product)");  return }
         products[index].isFavorite.toggle()
     }
 }

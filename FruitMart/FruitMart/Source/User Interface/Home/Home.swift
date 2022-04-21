@@ -46,11 +46,11 @@ struct Home: View {
             ForEach(store.products) { product in
                 HStack {
                     ProductRow(product: product, quickOrder: self.$quickOrder)
-
                     NavigationLink(destination: ProductDetailView(product: product)){
                         EmptyView()
                     }.frame(width:0)
-                    
+
+
                 }
                 .listRowBackground(Color.background)
                 
