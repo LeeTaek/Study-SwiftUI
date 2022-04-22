@@ -25,7 +25,7 @@ struct ProductDetailView: View {
             orderView
         }
         .popup(isPresented: $showingAlert) {
-            Text("팝업")
+            OrderCompleteMessage()
         }
         .edgesIgnoringSafeArea(.top)
         .alert(isPresented: $showingPopup) {
