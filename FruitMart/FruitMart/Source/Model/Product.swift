@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Product: Decodable {
+struct Product: Codable {
 //    let id : UUID = UUID()
     var id: String { name }
     
