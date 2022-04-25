@@ -24,7 +24,8 @@ struct Home: View {
             }.buttonStyle(PlainButtonStyle())   //네비게이션보다 좋아요 버튼에 우선권을 줌.
                 .navigationTitle("과일마트")
         }
-      
+        .popupOverContext(item: $quickOrder, style: .blur, content: popupMessage(product:))
+
     }
     
     
@@ -63,8 +64,17 @@ struct Home: View {
         !store.products.filter({ $0.isFavorite }).isEmpty
     }
     
-    
-    
+    func popupMessage(product: Product) -> some View {
+      let name = product.name.split(separator: " ").last!
+      return VStack {
+        Text(name)
+          .font(.title).bold().kerning(3)
+          .foregroundColor(.peach)
+          .padding()
+        
+          OrderCompleteMessage()
+      }
+    }
     
 }
 

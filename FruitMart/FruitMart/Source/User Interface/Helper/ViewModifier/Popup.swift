@@ -20,7 +20,7 @@ fileprivate struct Popup<Message: View>: ViewModifier {
     
     init(
         size: CGSize? = nil,
-        style: PopupStyle = .none,
+        style: PopupStyle = .blur,
         message: Message
     ) {
         self.size = size
@@ -28,13 +28,16 @@ fileprivate struct Popup<Message: View>: ViewModifier {
         self.message = message
     }
     
+    
     func body(content: Content) -> some View {
         content // 팝업창을 띄운 뷰
             .blur(radius: style == .blur ? 2 : 0)   //  style이 블러인 경우 적용
             .overlay(Rectangle()                    //  dimmed 스타일인 경우 적용
-                .fill(Color.black.opacity(style == .dimmed ? 0.4 : 0)))
+                .fill(Color.black.opacity(style == .dimmed ? 0.4 : 0)), alignment: .center)
             .overlay(popupContent)
     }
+    
+    
     
     private var popupContent: some View {
         GeometryReader {
@@ -44,14 +47,17 @@ fileprivate struct Popup<Message: View>: ViewModifier {
                 .cornerRadius(12)
                 .shadow(color: .primaryShadow, radius: 15, x: 5, y: 5)
                 .overlay(self.checkCircleMark, alignment: .top)
+                .position(x: $0.size.width / 2, y: $0.size.height / 2)
+
         }
     }
     
     // 팝업 창 상단에 위치한 체크마크 심벌
     private var checkCircleMark: some View {
         Symbol("checkmark.circle.fill", color: .peach)
+            .clipShape(Circle())
             .font(Font.system(size: 60).weight(.semibold))
-            .background(Color.white.scaleEffect(0.8))
+            .background(Color.white.scaleEffect(0.7))
             .offset(x: 0, y: -20)
     }
 }
@@ -95,7 +101,8 @@ extension View {
         if isPresented.wrappedValue {   // isPresent는 Binding<Bool>이라 wrappedValue를 통해 접근해야함.
             let popup = Popup(size: size, style: style, message: content())
             let popupToggle = PopupToggle(isPresented: isPresented)
-            let modifiedContent = self.modifier(popup).modifier(popupToggle)    // 두개의 modifier을 중첩
+            let modifiedContent = self.modifier(popup).modifier(popupToggle)
+               // 두개의 modifier을 중첩
             
             return AnyView(modifiedContent)     // 반환 타입이 불투명 타입의 특성을 만족해야함. 때문에 AniView 타입으로 반환
         } else {
@@ -122,6 +129,29 @@ extension View {
             return AnyView(self)
         }
         
+    }
+    
+    
+    
+    func popupOverContext<Item: Identifiable, Content: View>(
+      item: Binding<Item?>,
+      size: CGSize? = nil,
+      style: PopupStyle = .none,
+      ignoringEdges edges: Edge.Set = .all,
+      @ViewBuilder content: (Item) -> Content
+    ) -> some View  {
+      let isNonNil = item.wrappedValue != nil
+      return ZStack {
+        self
+          .blur(radius: isNonNil && style == .blur ? 2 : 0)
+        
+        if isNonNil {
+          Color.black
+            .luminanceToAlpha()
+            .popup(item: item, size: size, style: style, content: content)
+            .edgesIgnoringSafeArea(edges)
+        }
+      }
     }
     
     

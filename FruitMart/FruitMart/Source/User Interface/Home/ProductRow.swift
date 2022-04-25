@@ -15,6 +15,8 @@ struct ProductRow: View {
     @Binding var quickOrder: Product?
     @State private var willAppear: Bool = false
     
+    
+    
     var body: some View {
         HStack{
             productImage

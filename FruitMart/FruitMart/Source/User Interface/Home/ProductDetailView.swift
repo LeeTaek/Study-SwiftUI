@@ -24,11 +24,11 @@ struct ProductDetailView: View {
             }
             orderView
         }
-        .popup(isPresented: $showingAlert) {
+        .popup(isPresented: $showingPopup) {
             OrderCompleteMessage()
         }
         .edgesIgnoringSafeArea(.top)
-        .alert(isPresented: $showingPopup) {
+        .alert(isPresented: $showingAlert) {
                 confirmAlert
             }
         .onAppear{ self.willApear = true }
@@ -111,6 +111,8 @@ struct ProductDetailView: View {
         }.buttonStyle(ShrinkButtonStyle())
     }
     
+    
+    
     // 화면에 출력할 설명창 글 분할
     func splitText(_ text: String) -> String {
         guard !text.isEmpty else { return text }
@@ -127,6 +129,8 @@ struct ProductDetailView: View {
         return String(lhsString + "\n" + rhsString)
     }
     
+    
+    
         
     // 알림창에 표시할 내용
     var confirmAlert: Alert {
@@ -138,6 +142,9 @@ struct ProductDetailView: View {
         }),
               secondaryButton: .cancel(Text("취소")))
     }
+    
+    
+    
     
     // 상품 수량과 정보를 placeOrder에 전달
     func placeOrder() {

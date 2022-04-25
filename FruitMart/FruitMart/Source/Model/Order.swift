@@ -17,6 +17,7 @@ struct Order: Identifiable {        // 식별을 위해 Identifiable 프로토�
     var price: Int {
         product.price * quantity
     }
-    
-    
 }
+
+
+
