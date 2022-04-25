@@ -12,6 +12,7 @@
 		741AB6B32807FAED00C86784 /* ProductData.json in Resources */ = {isa = PBXBuildFile; fileRef = 741AB6B22807FAED00C86784 /* ProductData.json */; };
 		741AB6B52807FE5600C86784 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741AB6B42807FE5600C86784 /* ProductDetailView.swift */; };
 		741AB6BA28081A2D00C86784 /* QuantitySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 741AB6B928081A2D00C86784 /* QuantitySelector.swift */; };
+		742B5A1B281663B9003BE6B7 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742B5A1A281663B9003BE6B7 /* AppSetting.swift */; };
 		7447132A2806B9CF00E956A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 744713292806B9CF00E956A5 /* Assets.xcassets */; };
 		7447132E2806BC3100E956A5 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7447132D2806BC3100E956A5 /* ColorExtension.swift */; };
 		744713312806C02E00E956A5 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 744713302806C02E00E956A5 /* Product.swift */; };
@@ -46,6 +47,7 @@
 		741AB6B22807FAED00C86784 /* ProductData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProductData.json; sourceTree = "<group>"; };
 		741AB6B42807FE5600C86784 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 		741AB6B928081A2D00C86784 /* QuantitySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantitySelector.swift; sourceTree = "<group>"; };
+		742B5A1A281663B9003BE6B7 /* AppSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		744713292806B9CF00E956A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../HelloSwiftUI/HelloSwiftUI/Assets.xcassets; sourceTree = "<group>"; };
 		7447132D2806BC3100E956A5 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		744713302806C02E00E956A5 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 			children = (
 				744713302806C02E00E956A5 /* Product.swift */,
 				741AB6B02807FA3D00C86784 /* Store.swift */,
+				742B5A1A281663B9003BE6B7 /* AppSetting.swift */,
 				74AC76FE280935DE0027FA19 /* Order.swift */,
 				74936CD52811203E00EE10AB /* Recipe.swift */,
 			);
@@ -334,6 +337,7 @@
 				741AB6B12807FA3D00C86784 /* Store.swift in Sources */,
 				74936CDB281125A700EE10AB /* Stripes.swift in Sources */,
 				741AB6BA28081A2D00C86784 /* QuantitySelector.swift in Sources */,
+				742B5A1B281663B9003BE6B7 /* AppSetting.swift in Sources */,
 				74D7008E280FCAB200243CF2 /* MainTablView.swift in Sources */,
 				74AC770728094E9D0027FA19 /* ShrinkButtonStyle.swift in Sources */,
 				74D7008C280FC19E00243CF2 /* FavoriteProductScrollView.swift in Sources */,

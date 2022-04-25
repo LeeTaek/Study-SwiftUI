@@ -7,19 +7,25 @@
 import SwiftUI
 
 final class Store: ObservableObject {
+    @Published var appSetting: AppSetting
     @Published var products: [Product]
     @Published var orders: [Order] = [] {
         didSet { saveData(at: orderFilePath, data: orders) }
     }
     
-    init(filename: String = "ProductData.json") {
+    init(filename: String = "ProductData.json",
+         appSetting: AppSetting = AppSetting()
+    ) {
         self.products = Bundle.main.decode(filename: filename, as: [Product].self)
+        self.appSetting = appSetting
         self.orders = loadData(as: orderFilePath, type: [Order].self)
+
     }
     
     func placeOrder(product: Product, quantity: Int) {
         let nextID = Order.orderSequence.next()!
         let order = Order(id: nextID, product: product, quantity: quantity)
+        
         orders.append(order)
         Order.lastOrderID = nextID
     }
